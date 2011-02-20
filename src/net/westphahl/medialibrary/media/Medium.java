@@ -32,12 +32,15 @@ public class Medium {
 	}
   
 	public String toString() {
+		String humanStatus = "unavail.";
+		if (this.status) {
+			humanStatus = "avail.";
+		}
 		return String.format("%10d %-10s %-25s %-10s",
-				this.signature, this.type, this.title, this.status);
+				this.signature, this.type, this.title, humanStatus);
 	}
 
 	public static void printTitles() {
-		// FIXME: Format
 		System.out.println(String.format("%10s %-10s %-25s %-10s %s",
 				"Signature", "Type", "Title", "Status", "Further Information"));
 	}
